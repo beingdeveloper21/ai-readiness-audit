@@ -9,6 +9,16 @@ const PORT = process.env.PORT || 5002;
 app.use(cors());
 app.use(express.json());
 
+// Root endpoint - friendly message
+app.get("/", (req, res) => {
+  res.json({
+    message: "AI Readiness Audit Backend is running.",
+    endpoints: {
+      analyze: "GET /analyze?url=YOUR_URL - Analyze a website for AI readiness"
+    }
+  });
+});
+
 // Analyze endpoint
 app.get("/analyze", async (req, res) => {
   const { url } = req.query;
