@@ -1,0 +1,16 @@
+{
+  "name": "ai-readiness-audit",
+  "version": 1,
+  "builds": [
+    {
+      "src": "dist/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
