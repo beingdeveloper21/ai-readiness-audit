@@ -1,6 +1,6 @@
 {
   "name": "ai-readiness-audit",
-  "version": 1,
+  "version": 2,
   "builds": [
     {
       "src": "dist/**",
