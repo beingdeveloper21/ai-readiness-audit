@@ -24,8 +24,13 @@ function App() {
     setError('')
     setResult(null)
 
+    // Use environment variable for backend URL
+    // For local: VITE_BACKEND_URL=http://localhost:5002
+    // For production: Set VITE_BACKEND_URL to your Render backend URL
+    const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5002'
+
     try {
-      const res = await fetch(`http://localhost:5002/analyze?url=${encodeURIComponent(finalUrl)}`)
+      const res = await fetch(`${backendUrl}/analyze?url=${encodeURIComponent(finalUrl)}`)
       const data = await res.json()
 
       if (data.error) {
